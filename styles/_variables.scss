@@ -1,0 +1,47 @@
+/*Font*/
+$colorFont: #fff;
+$bgColor: #E0E0E0;
+
+/*Radio adn Check Buttons*/
+$backColorRadio: #FFF;
+$borderRadio: 4px solid #3C247D;
+$colorIcon: #000;
+$sizeIcon: 1.5rem;
+
+/*Service Container*/
+$backColorContainer: #4CA4C7;
+
+/*Bottoms*/
+$bgColorBottoms: #2672B1;
+$colorBottoms: #E0E0E0;
+/*Hover*/
+//Invierte los colores.
+
+/*SVG Background*/
+$backColorIntro: #2672B1;
+
+/*General Features*/
+$textColorIntro: #fff;
+
+/*Mixing Functions*/
+@mixin flexCenter ($direction, $vertical, $horizont) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $vertical;
+    justify-content: $horizont;
+}
+
+@mixin font ($kindFont, $weight) {
+  font-family: $kindFont;
+  font-weight: $weight;
+}
+
+@mixin sizeContainer ($width, $maxW, $height, $maxH) {
+  width: $width;
+  max-width: $maxW;
+  height: $height;
+  max-height: $maxH;
+}
+
+
+

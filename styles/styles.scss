@@ -1,0 +1,572 @@
+/*Initializing CSS*/
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+a {
+    text-decoration: none;
+}
+p, h1, h2, h3, h4, h5, h6, a, input, textarea, label, button {
+    font-family: 'Open Sans', sans-serif;
+}
+input, textarea, select, button {
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+input, select, option {
+  background-color: #EBE5D0;
+}
+textarea:focus, input:focus, select:focus {
+  border: 2px solid #2672B1;
+}
+body {
+    font-size: 16px;
+    background-image: url(../img/bgCovid1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+label {
+  font-size: 1rem;
+}
+
+@import "./variables";
+
+#main {
+  margin: 0 auto;
+  @include sizeContainer (100%, 1600px, 100%, 100%);
+  
+
+  header {
+    @include sizeContainer (100%, 1600px, auto, auto);
+   // border: 2px solid red;
+    padding: 2rem;
+    text-align: center;
+    line-height: 2.3rem;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.5);
+
+
+    h1 {
+      color: $colorFont;
+    }
+    p {
+      color: $colorFont;
+    }
+  }
+  /************Survey***********/
+  form {
+   // border: 2px solid blue;
+    /*Default Flexbox to Older Browsers*/
+    @include flexCenter (column, center, space-around);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6.25rem 6.25rem 6.25rem 6.25rem 6.25rem 11.25rem 18.75rem 15.625rem auto;
+    grid-gap: 0.5rem;
+    justify-items: center;
+    height: auto;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: $colorFont;
+
+    .form-group {
+      @include sizeContainer (100%, 31.25rem, 3.75rem, 6.25rem);
+      @include flexCenter (row, center, space-between);
+      border-bottom: 1.5px solid #E0E0E0;
+    }
+
+    .identify {
+      //border: 2px solid red;
+      label {
+        font-size: 1rem;
+
+      }
+      input {
+        @include sizeContainer (100%, 18.75rem, 2.5rem, 2.5rem);
+        padding: 0.8rem;
+        font-size: 1rem;
+      }
+    }
+    .select {
+      //border: 2px solid red;
+
+      p {
+        font-size: 1rem;
+      }
+      select {
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    .diagnostic {
+      //border: 2px solid red;
+      @include sizeContainer (100%, 36rem, 2.2rem, 3.75rem);
+
+      p{
+        font-size: 1rem;
+      }
+      input {
+        opacity: 0;
+      }
+      label {
+        position: relative;
+        width: 4.375rem;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 5.1rem;
+        cursor: pointer;
+        //border: 2px solid red;
+
+        /*************Styling Checkbottom**********************/
+        &:before {
+          content: "\2714";
+          position: absolute;
+          top: 0.2rem;
+          right: 0.39rem;
+          display: inline-block;
+          width: 1.5625rem;
+          height: 1.5625rem;
+          border-radius: 50%;
+          background-color: $backColorRadio;
+          border: 2px solid transparent;
+          color: transparent;
+          font-size: 0.92rem;
+          @include flexCenter (row, center, center); 
+        }
+      }
+
+      input[type="radio"]:checked + label::before {
+        color: $colorIcon;
+        font-size: $sizeIcon;
+        border: 2px solid transparent;
+      }
+
+      input[type="radio"]:focus + label:before {
+        border: 2px solid #2672B1;
+      }
+    }
+    .select2 {
+      @include sizeContainer (100%, 37.5rem, 9.375rem, 9.375rem);
+      //border: 2px solid red;
+      @include flexCenter (column, center, space-around);
+      p {
+        display: block;
+        text-align: center;
+      }
+      select {
+        font-size: 1rem;
+        padding: 0.4rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    .symptoms {
+      @include sizeContainer (100%, 37.5rem, 18.75rem, 21.875rem);
+      @include flexCenter (row, center, space-around);
+      //border: 2px solid red;
+      flex-wrap: wrap;
+      padding: 0.5rem;
+
+      p{
+        display: block;
+        text-align: center;
+      }
+      .check1 {
+        //border: 1px solid blue;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-gap: 0;
+        width: 50%;
+        margin-top: 22px;
+
+        input {
+          opacity: 0;
+        }
+        label {
+            //border: 1px solid gray;
+            position: relative;
+            width: 250px;
+            height: 40px;
+            padding: 10px 0 10px 50px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            /*************Styling Checkbottom**********************/
+          &:before {
+            content: "\2714";
+            position: absolute;
+            top: 0.45rem;
+            left: 10px;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: $backColorRadio;
+            border: 2px solid transparent;
+            color: transparent;
+            font-size: 0.9375rem;
+            @include flexCenter (row, center, center); 
+          }
+        }
+        input[type="checkbox"]:checked + label:before {
+          color: $colorIcon;
+          font-size: $sizeIcon;
+        }   
+        input[type="checkbox"]:focus + label:before {
+          border: 2px solid #2672B1;
+        }
+      }
+      .check2 {
+        @extend .check1;
+        margin-top: -1.1875rem;
+      }
+    }
+    .your-opinion {
+      //border: 2px solid red;
+      @include sizeContainer (100%, 43.75rem, 15.625rem, 15.625rem);
+      @include flexCenter (column, center, space-around);
+
+      p {
+        display: block;
+        text-align: center;
+      }
+      textarea {
+        @include sizeContainer (100%, 31.25rem, 9.375rem, 9.375rem);
+        padding: 0.5rem;
+      }
+    }
+    .button-end {
+      border: none;
+      @include flexCenter (column, center, space-around);
+
+      .submit-button {
+        padding: 0.4375rem 0.9375rem;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 5px;
+        outline: none;
+        height: 50px;
+        width: 200px;
+        background-color: $bgColorBottoms;
+        color: $colorBottoms;
+        
+        &:hover {
+          //background-color: red;
+          width: 300px;
+          height: 55px;
+          font-size: 1.1rem;
+        }
+      }
+
+    }
+  }
+}
+/********************************Message Error or OK***********************************/
+.message {
+      //border: 2px solid red;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #000;
+      padding: 10px;
+      @include sizeContainer (100%, 100%, auto, auto);
+}
+.msg-js{
+  text-align: center;
+  background-color: #E0E0E0;
+  @include sizeContainer (100%, 20rem, auto, auto);
+  padding: 0.5rem 0.2rem;
+  margin: 0.5rem auto;
+}
+.allGood {
+    border: 8px solid green;
+    display: none;
+}
+.error {
+    border: 8px solid red;
+    display: none;
+}
+
+footer {
+  color: #FFF;
+  background-color: #303030;
+  @include flexCenter (row, center, space-around);
+  flex-wrap: wrap;
+  @include sizeContainer (100%, 100%, 14rem, 1700px);
+
+  .caption{
+    //border: 2px solid red;
+    width: 100%;
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+
+  }
+  .contact {
+    //border: 2px solid red;
+    width: 100px;
+    height: auto;
+    @include flexCenter (row, center, space-around);
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    background-image: url(../img/bgCodiv-Mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #main {
+    
+    //border: 2px solid blue;
+    
+    header {
+        padding: 1rem;
+        line-height: 1.6rem;
+        font-size: 0.9rem;
+        h1 {
+          margin-top: 1rem;
+        }
+        p {
+          margin-top: 1rem;
+          line-height: 1.2rem;
+        }
+      }
+    form {
+      padding: 1rem;
+      grid-template-rows: 6.25rem 6.25rem 6.25rem 6.25rem 6.25rem 11.25rem 23.75rem 15.625rem auto;
+
+      .diagnostic {
+        //border: 2px solid red;
+        @include sizeContainer (100%, 36rem, 2.2rem, 3.75rem);
+        //background: blue;
+      }
+      .symptoms {
+      @include sizeContainer (100%, 37.5rem, 23.75rem, 24.875rem);
+      @include flexCenter (row, center, space-around);
+      //background: blue;
+      }
+    }
+  }
+}
+@media (max-width: 482px) {
+  body {
+    font-size: 14px;
+    textarea {
+      font-size: 14px;
+    }
+  }
+    #main {
+      header {
+        line-height: 1.6rem;
+        font-size: 0.9rem;
+        padding: 1rem;
+        h1 {
+          margin-top: 1rem;
+        }
+        p {
+          margin-top: 1rem;
+          line-height: 1.2rem;
+        }
+      }
+      form {
+        grid-template-rows: 6.25rem 6.25rem 6.25rem 8rem 8rem 11.25rem 23.75rem 15.625rem auto;
+        grid-gap: 0.5rem;
+        padding: 1rem;
+        background-color:rgba(0, 0, 0, 0.55);
+
+        .form-group {
+          label  {
+            font-size: 0.9rem;
+            @include sizeContainer (100%, 31.25rem, 3.75rem, 6.25rem);
+            @include flexCenter (row, center, space-between);
+           // border: 2px solid red;
+          }
+          input {
+            @include sizeContainer (100%, 16rem, 2.5rem, 2.5rem);
+            padding: 0.7rem;
+            font-size: 0.9rem;
+          }
+        }
+        .select {
+          @include flexCenter (column, center, space-around);
+          @include sizeContainer (100%, 31.25rem, 100%, 100%);
+          //border: 2px solid red;
+
+          p, select, option {
+            font-size: 0.9rem;
+            //border: 2px solid red;
+            border-radius: 10px;
+          }
+        }
+        .diagnostic {
+          @include sizeContainer (100%, 36rem, 100%, 100%);
+          @include flexCenter (column, center, space-between);
+          
+          //background: blue;
+          p {
+            font-size: 0.9rem;
+            // border: 2px solid red;
+            width: 300px;
+          }
+          label {
+            //border: 2px solid green;
+            @include sizeContainer (100%, 5rem, 100%, 100%);
+          }
+        }
+        .select2 {
+          select, option {
+            font-size: 0.9rem;
+            //border: 2px solid red;
+            border-radius: 10px;
+          }
+        }
+        .symptoms {
+          @include sizeContainer (100%, 37.5rem, 23.75rem, 24.875rem);
+          @include flexCenter (row, center, space-around);
+          //background: blue;
+
+          .check1 {
+            //border: 2px solid red;
+
+            label {
+              //border: 2px solid green;
+              margin-left: -25px;
+              width: 13rem;
+
+              /*******Checkboxes*****/
+              &:before {
+                content: "\2714";
+                position: absolute;
+                top: 0.35rem;
+                left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+}
+@media (max-width: 395px) {
+  body {
+    font-size: 14px;
+    textarea {
+      font-size: 14px;
+    }
+  }
+    #main {
+      header {
+        line-height: 1.6rem;
+        font-size: 0.9rem;
+        padding: 1rem;
+        h1 {
+          margin-top: 1rem;
+          font-size: 1.5rem;
+        }
+        p {
+          margin-top: 1rem;
+          line-height: 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+      form {
+        grid-template-rows: 6.25rem 6.25rem 6.25rem 8rem 8rem 11.25rem 35rem 15.625rem auto;
+        grid-gap: 0.5rem;
+        padding: 1rem;
+        background-color:rgba(0, 0, 0, 0.55);
+
+        .form-group {
+
+          label  {
+            font-size: 0.9rem;
+            @include sizeContainer (100%, 31.25rem, 3.75rem, 6.25rem);
+            @include flexCenter (row, center, space-between);
+            //border: 2px solid red;
+          }
+          input {
+            @include sizeContainer (100%, 15rem, 2.5rem, 2.5rem);
+            padding: 0.7rem;
+            font-size: 0.9rem;
+            //border: 3px solid red;
+          }
+        }
+        .identify {
+          label {
+            //border: 1px solid red;
+            width: 4rem;
+          }
+        }
+        .select {
+          @include flexCenter (column, center, space-around);
+          @include sizeContainer (100%, 31.25rem, 100%, 100%);
+          //border: 2px solid red;
+
+          p, select, option {
+            font-size: 0.9rem;
+            //border: 2px solid red;
+            border-radius: 10px;
+          }
+        }
+        .diagnostic {
+          @include sizeContainer (100%, 36rem, 100%, 100%);
+          @include flexCenter (column, center, space-between);
+          //background: blue;
+          p {
+            font-size: 0.9rem;
+            //border: 2px solid red;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+          }
+          label {
+            //border: 2px solid green;
+            @include sizeContainer (100%, 5rem, 100%, 100%);
+          }
+        }
+        .select2 {
+          select, option {
+            font-size: 0.9rem;
+            //border: 2px solid red;
+            border-radius: 10px;
+          }
+        }
+        .symptoms {
+          @include sizeContainer (100%, 37.5rem, 100%, 100%);
+          @include flexCenter (column, center, space-around);
+          //background: blue;
+          
+
+          .check1 {
+            //border: 2px solid red;
+            //width: 100%;
+            input {
+              opacity: 0;
+              width: 5px;
+            }
+            label {
+              //border: 2px solid red;
+              margin-left:-50px;
+              width: 14rem;
+
+              /*******Checkboxes*****/
+              &:before {
+                content: "\2714";
+                position: absolute;
+                top: 0.25rem;
+                left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+}
