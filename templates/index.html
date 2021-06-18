@@ -21,7 +21,8 @@
       <p id="description">We want to know your opinion about the current pandemic</p>
     </header>
 
-    <form action="" id="survey-form">
+    <form action="/add" method="post" id="survey-form">
+
       <div class="form-group identify">
         <label id="name-label" for="name">Name</label>
         <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name" required />
@@ -232,10 +233,10 @@
       <div class="form-group diagnostic">
         <p>Have you been diagnosed with COVID 19?</p>
 
-        <input id="yes-diagnostic" name="user-diagnosed" value="definitely" type="radio" class="input-radio" />
+        <input id="yes-diagnostic" name="user_diagnosed" value="yes" type="radio" class="input-radio" />
         <label for="yes-diagnostic">Yes</label>
 
-        <input id="no-diagnostic" name="user-diagnosed" value="not" type="radio" class="input-radio" />
+        <input id="no-diagnostic" name="user_diagnosed" value="not" type="radio" class="input-radio" />
         <label for="no-diagnostic">Not</label>
       </div>
 
