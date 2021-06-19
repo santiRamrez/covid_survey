@@ -40,7 +40,12 @@ def add_register():
     country = request.form['country']
     user_diagnosed = request.form['user_diagnosed']
     illExperience = request.form['illExperience']
-    symptoms = request.form['symptoms']
+
+    list_symptoms = request.form.getlist('symptoms')
+    valores = ', '.join(list_symptoms)
+    symptoms = (valores
+    )
+
     comment = request.form['comment']
 
     cur = cnx.cursor()
