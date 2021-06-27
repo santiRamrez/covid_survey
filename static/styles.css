@@ -499,7 +499,7 @@ footer .contact {
 
 @media (max-width: 560px) {
   body {
-    background-image: url(../img/bgCodiv-Mobile.jpg);
+    background-image: url('/static/img/bgCodiv-Mobile.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
