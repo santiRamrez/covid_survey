@@ -1,0 +1,36 @@
+[33mcommit 0cbaf98bc38530b7277a0512afa6817f894fb2ac[m[33m ([m[1;36mHEAD -> [m[1;32mdeveloper[m[33m)[m
+Author: Jorge Leonardo Cespedes Tapia <jorge.cespedes.tapia@gmail.com>
+Date:   Fri Jun 18 17:12:57 2021 -0500
+
+    Conección a BBDD. Registro de Data.
+
+[33mcommit fc9a61d309067461cdb21eaaa04cc6fc1fc0fd66[m
+Author: Jorge Leonardo Cespedes Tapia <jorge.cespedes.tapia@gmail.com>
+Date:   Wed Jun 16 21:45:02 2021 -0500
+
+    Instalando Flask. Ordenando archivos. Creación de la DDBB
+
+[33mcommit 8de615e1584a41f61cf4bada588793c3345189ec[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 03efe9f 1d84445
+Author: Santiago Ramirez <santi_coding@outlook.com>
+Date:   Wed Jun 9 21:11:24 2021 -0400
+
+    Merge branch 'master' of github.com:santiRamrez/covid_survey
+
+[33mcommit 1d8444544691e6eebbcb13cfb208ce876f9673f8[m
+Author: Santiago Ramírez <sarmejias@gmail.com>
+Date:   Wed Jun 9 21:08:33 2021 -0400
+
+    Initial commit
+
+[33mcommit 03efe9f4e33fbeea16862db919903223cc9eb374[m
+Author: Santiago Ramirez <santi_coding@outlook.com>
+Date:   Wed Jun 9 21:07:15 2021 -0400
+
+    Starting this covid survey with frontend ready
+
+[33mcommit c0463a0682d002de55bac59ca5f4f27c48fef6ca[m
+Author: Santiago Ramirez <santi_coding@outlook.com>
+Date:   Wed Jun 9 19:10:19 2021 -0400
+
+    Initializing git locally
